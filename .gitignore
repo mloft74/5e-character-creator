@@ -10,8 +10,6 @@ coverage
 
 # production
 build
-bin
-index.js
 
 # misc
 .DS_Store
@@ -20,6 +18,11 @@ index.js
 .env.test.local
 .env.production.local
 
+# debug logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# build files
+index.js.map
+index.js
