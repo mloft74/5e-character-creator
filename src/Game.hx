@@ -35,6 +35,21 @@ class Game extends ReactComponentOfState<GameState> {
 
     public final lines : Array<Array<Int>>;
 
+    public function handleClick(i:Int):Void {
+        final history = state.history.slice(0, state.stepNumber + 1);
+        final current = history[history.length - 1];
+        final squares = current.squares.copy();
+        if (calculateWinner() != "" || squares[i] != "") return;
+        squares[i] = getPlayer();
+        setState({
+            history : history.concat([{
+                squares : squares
+            }]),
+            stepNumber : history.length,
+            xIsNext    : !state.xIsNext
+        });
+    }
+
     public function calculateWinner():String {
         final history = state.history;
         final current = history[history.length - 1];
@@ -58,18 +73,10 @@ class Game extends ReactComponentOfState<GameState> {
         return state.xIsNext ? "X" : "O";
     }
 
-    public function handleClick(i:Int):Void {
-        final history = state.history;
-        final current = history[history.length - 1];
-        final squares = current.squares.copy();
-        if (calculateWinner() != "" || squares[i] != "") return;
-        squares[i] = getPlayer();
+    public function jumpTo(move) {
         setState({
-            history : history.concat([{
-                squares : squares
-            }]),
-            stepNumber : history.length,
-            xIsNext    : !state.xIsNext
+            stepNumber : move,
+            xIsNext    : move % 2 == 0
         });
     }
 
@@ -83,6 +90,21 @@ class Game extends ReactComponentOfState<GameState> {
             'Next player: ${getPlayer()}'
         );
 
+        final moves = Lambda.mapi(history, (move, step) -> {
+            final desc = (
+                move != 0 ?
+                'Go to move #$move' :
+                "Go to game start"
+            );
+            return jsx(
+              <li key=$move>
+                <button onClick=${ () -> jumpTo(move) }>
+                  $desc
+                </button>
+              </li>
+            );
+        });
+
         return jsx(
           <div className="game">
             <div className="game-board">
@@ -93,6 +115,7 @@ class Game extends ReactComponentOfState<GameState> {
             </div>
             <div className="game-info">
               <div>$status</div>
+              <ol>$moves</ol>
             </div>
           </div>
         );
