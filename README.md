@@ -1,68 +1,35 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 5e Character Creator
 
-## Available Scripts
+This project is a character creator for 5e D&D.
 
-In the project directory, you can run:
+## Environment setup
 
-### `npm start`
+This section details the project development tools and dependencies, and how to install them.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Sdks
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+First, install [Haxe 4.0.5](https://haxe.org/download/). Then, run `haxelib install react 1.11.0`. If haxelib asks you to set up a library directory (I believe it will be `haxelib setup [path]`), do so as directed. Finally, install [Node.js 13.11.0](https://nodejs.org/en/).
 
-### `npm test`
+### Editor
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Visual Studio Code is a great editor for Haxe. The extensions "Haxe" and "Haxe Checkstyle" should be enough to get up and running. It is also a good idea to turn on Auto Save when focus changes.
 
-### `npm run build`
+#### Gotchas with VS Code
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+When using the build task in VS Code, build errors will be displayed on the editor. These will not go away until fixed and rebuilt.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+The linter (Haxe Checkstyle) only runs when the file is saved.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Building the project
 
-### `npm run eject`
+This section describes the step that need to be taken to build the project.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### First time setup
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+First, run `npm install --global npm` to update npm. Next, run `npm install` in the directory with [package.json](package.json) in it. This will install the build dependencies of the project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Normal building
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Run `haxe build.hxml` to build compile the Haxe code to Javascript. A default build task is included in the repo, which can be run with `ctrl+shift+b` or `cmd+shift+b` from VSCode.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Use `npm start` to start the devlopment server, or use the npm scripts shortcut in VS Code. The development server will detect when code has changed (in our case, whenever we compile the Haxe code), and reload the webpage.
