@@ -2,6 +2,8 @@ import Board;
 import react.ReactComponent;
 import react.ReactMacro.jsx;
 
+using Lambda;
+
 typedef GameState = {
     history : Array<{
         squares : Array<String>
@@ -90,7 +92,7 @@ class Game extends ReactComponentOfState<GameState> {
             'Next player: ${getPlayer()}'
         );
 
-        final moves = Lambda.mapi(history, (move, step) -> {
+        final moves = history.mapi( (move, step) -> {
             final desc = (
                 move != 0 ?
                 'Go to move #$move' :
