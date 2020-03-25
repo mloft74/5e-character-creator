@@ -30,6 +30,6 @@ First, run `npm install --global npm` to update npm. Next, run `npm install` in 
 
 ### Normal building
 
-Run `haxe build.hxml` to build compile the Haxe code to Javascript. A default build task is included in the repo, which can be run with `ctrl+shift+b` or `cmd+shift+b` from VSCode.
+Run `haxe build.hxml` to compile the Haxe code to Javascript. A default build task is included in the repo, which can be run with `ctrl+shift+b` or `cmd+shift+b` from VS Code.
 
 Use `npm start` to start the devlopment server, or use the npm scripts shortcut in VS Code. The development server will detect when code has changed (in our case, whenever we compile the Haxe code), and reload the webpage.
