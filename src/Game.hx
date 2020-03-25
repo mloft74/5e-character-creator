@@ -98,16 +98,16 @@ class Game extends ReactComponentOfState<GameState> {
                 'Go to move #$move' :
                 "Go to game start"
             );
-            return jsx(
+            return jsx('
               <li key=$move>
                 <button onClick=${ () -> jumpTo(move) }>
                   $desc
                 </button>
               </li>
-            );
+            ');
         });
 
-        return jsx(
+        return jsx('
           <div className="game">
             <div className="game-board">
               <Board
@@ -120,7 +120,7 @@ class Game extends ReactComponentOfState<GameState> {
               <ol>$moves</ol>
             </div>
           </div>
-        );
+        ');
     }
 
 }

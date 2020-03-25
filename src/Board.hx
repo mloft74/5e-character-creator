@@ -10,16 +10,16 @@ typedef BoardProps = {
 class Board extends ReactComponentOfProps<BoardProps>{
 
     public function renderSquare(i:Int):ReactElement {
-        return jsx(
+        return jsx('
           <Square
             value=${ props.squares[i] }
             onClick=${ () -> props.onClick(i) }
           />
-        );
+        ');
     }
 
     override public function render():ReactElement {
-        return jsx(
+        return jsx('
           <div>
             <div className="board-row">
               ${ renderSquare(0) }
@@ -37,7 +37,7 @@ class Board extends ReactComponentOfProps<BoardProps>{
               ${ renderSquare(8) }
             </div>
           </div>
-        );
+        ');
     }
 
 }

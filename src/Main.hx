@@ -7,8 +7,8 @@ class Main {
 
     static function main() {
         ReactDOM.render(
-            jsx(<Game/>),
-            Browser.document.getElementById("root")
+          jsx('<Game/>'),
+          Browser.document.getElementById("root")
         );
     }
 
