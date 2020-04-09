@@ -1,4 +1,4 @@
-import Game;
+import ViewPort;
 import js.Browser;
 import react.ReactDOM;
 import react.ReactMacro.jsx;
@@ -7,7 +7,7 @@ class Main {
 
     static function main() {
         ReactDOM.render(
-          jsx('<Game/>'),
+          jsx('<ViewPort/>'),
           Browser.document.getElementById("root")
         );
     }

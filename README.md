@@ -2,6 +2,10 @@
 
 This project is a character creator for 5e D&D.
 
+## Resources
+
+* [Flexbox tutorial](https://www.youtube.com/watch?v=k32voqQhODc)
+
 ## Environment setup
 
 This section details the project development tools and dependencies, and how to install them.
