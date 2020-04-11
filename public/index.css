@@ -6,7 +6,7 @@ body {
   background-color: lightgrey;
 }
 
-button {
+button, select {
   font: 32px "Century Gothic", Futura, sans-serif;
 }
 

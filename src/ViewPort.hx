@@ -1,9 +1,13 @@
+import react.ReactEvent;
 import react.ReactComponent;
 import react.ReactMacro.jsx;
+import ClassLevelPicker;
 
 typedef ViewPortState = {
     currentView:Int,
-    previousDisabled:Bool
+    previousDisabled:Bool,
+    classValue:String,
+    levelValue:String
 }
 
 class ViewPort extends ReactComponentOfState<ViewPortState> {
@@ -12,7 +16,9 @@ class ViewPort extends ReactComponentOfState<ViewPortState> {
         super();
         state = {
             currentView: 0,
-            previousDisabled: true
+            previousDisabled: true,
+            classValue: "",
+            levelValue: "1"
         };
     }
 
@@ -32,12 +38,35 @@ class ViewPort extends ReactComponentOfState<ViewPortState> {
         });
     }
 
+    public function handleClassChange(event:ReactEvent) {
+        final target:Dynamic = event.currentTarget;
+        setState({
+            classValue: target.value
+        });
+    }
+
+    public function handleLevelChange(event:ReactEvent) {
+        final target:Dynamic = event.currentTarget;
+        setState({
+            levelValue: target.value
+        });
+    }
+
     public override function render():ReactElement {
         return jsx('
           <div>
             <p>
               ${ state.currentView }
             </p>
+            <p>
+              ${ state.classValue } : ${ state.levelValue }
+            </p>
+            <$ClassLevelPicker
+              classValue=${ state.classValue }
+              levelValue=${ state.levelValue }
+              handleClassChange=${ (e:ReactEvent) -> handleClassChange(e) }
+              handleLevelChange=${ (e:ReactEvent) -> handleLevelChange(e) }
+            />
             <$ViewSwitch
               previousView=${ () -> previousView() }
               previousDisabled=${ state.previousDisabled }
