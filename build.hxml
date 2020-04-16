@@ -2,7 +2,6 @@
 -main Main
 -js src/index.js
 -lib react
--D react_ver=16.3
 -D js-es=6
 -debug
 -D source-map-content
