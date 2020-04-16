@@ -1,7 +1,7 @@
-import react.ReactEvent;
-import react.ReactComponent;
-import react.ReactMacro.jsx;
 import ClassLevelPicker;
+import react.ReactComponent;
+import react.ReactEvent;
+import react.ReactMacro.jsx;
 
 typedef ViewPortState = {
     currentView:Int,
