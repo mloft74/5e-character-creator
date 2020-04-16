@@ -6,11 +6,11 @@ body {
   background-color: lightgrey;
 }
 
-button {
+button, select {
   font: 32px "Century Gothic", Futura, sans-serif;
 }
 
-.view-switch-container {
+.view-switch-container, .class-level-container {
   display: flex;
   justify-content: space-between;
 }

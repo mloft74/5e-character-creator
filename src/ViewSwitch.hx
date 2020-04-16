@@ -1,10 +1,8 @@
-import react.ReactComponent;
-import react.ReactMacro.jsx;
-
 typedef ViewSwitchProps = {
     previousView:() -> Void,
     nextView:() -> Void,
-    previousDisabled:Bool
+    previousDisabled:Bool,
+    nextDisabled:Bool
 }
 
 class ViewSwitch extends ReactComponentOfProps<ViewSwitchProps> {
@@ -20,6 +18,7 @@ class ViewSwitch extends ReactComponentOfProps<ViewSwitchProps> {
             </button>
             <button
               onClick=${ props.nextView }
+              disabled=${ props.nextDisabled }
             >
               Next
             </button>
