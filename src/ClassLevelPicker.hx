@@ -1,8 +1,6 @@
 import ClassPicker;
 import LevelPicker;
-import react.ReactComponent;
 import react.ReactEvent;
-import react.ReactMacro.jsx;
 
 typedef ClassLevelPickerProps = {
     classValue:String,

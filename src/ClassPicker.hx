@@ -1,7 +1,5 @@
 import ClassEnum;
-import react.ReactComponent;
 import react.ReactEvent;
-import react.ReactMacro.jsx;
 
 typedef ClassPickerProps = {
     value:String,

@@ -1,6 +1,3 @@
-import react.ReactComponent;
-import react.ReactMacro.jsx;
-
 typedef ViewSwitchProps = {
     previousView:() -> Void,
     nextView:() -> Void,
