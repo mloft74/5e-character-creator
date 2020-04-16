@@ -1,5 +1,5 @@
-import react.ReactEvent;
 import react.ReactComponent;
+import react.ReactEvent;
 import react.ReactMacro.jsx;
 
 typedef LevelPickerProps = {

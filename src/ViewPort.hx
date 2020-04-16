@@ -1,4 +1,5 @@
 import ClassLevelPicker;
+import ViewSwitch;
 import react.ReactComponent;
 import react.ReactEvent;
 import react.ReactMacro.jsx;
