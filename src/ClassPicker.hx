@@ -1,3 +1,4 @@
+import ClassEnum;
 import react.ReactComponent;
 import react.ReactEvent;
 import react.ReactMacro.jsx;
@@ -21,19 +22,19 @@ class ClassPicker extends ReactComponentOfProps<ClassPickerProps> {
             onChange=${ props.handleChange }
             id=${ props.id }
           >
-            <option value="">
+            <option value=$None>
               --
             </option>
-            <option value="barbarian">
+            <option value=$Barbarian>
               Barbarian
             </option>
-            <option value="fighter">
+            <option value=$Fighter>
               Fighter
             </option>
-            <option value="monk">
+            <option value=$Monk>
               Monk
             </option>
-            <option value="rogue">
+            <option value=$Rogue>
               Rogue
             </option>
           </select>

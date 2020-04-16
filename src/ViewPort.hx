@@ -1,3 +1,4 @@
+import ClassEnum;
 import ClassLevelPicker;
 import ViewSwitch;
 import react.ReactComponent;
@@ -18,7 +19,7 @@ class ViewPort extends ReactComponentOfState<ViewPortState> {
         state = {
             currentView: 0,
             previousDisabled: true,
-            classValue: "",
+            classValue: None.getName(),
             levelValue: "1"
         };
     }
