@@ -7,7 +7,7 @@ class Main {
 
     static function main() {
         ReactDOM.render(
-          jsx('<ViewPort/>'),
+          jsx('<$ViewPort/>'),
           Browser.document.getElementById("root")
         );
     }
