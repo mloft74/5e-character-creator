@@ -5,8 +5,7 @@ import react.ReactMacro.jsx;
 
 typedef ClassPickerProps = {
     value:String,
-    handleChange:(ReactEvent) -> Void,
-    id:String
+    handleChange:(ReactEvent) -> Void
 }
 
 class ClassPicker extends ReactComponentOfProps<ClassPickerProps> {
@@ -16,28 +15,34 @@ class ClassPicker extends ReactComponentOfProps<ClassPickerProps> {
     }
 
     public override function render():ReactElement {
+        final classId = "class-picker";
         return jsx('
-          <select
-            value=${ props.value }
-            onChange=${ props.handleChange }
-            id=${ props.id }
-          >
-            <option value=$None>
-              --
-            </option>
-            <option value=$Barbarian>
-              Barbarian
-            </option>
-            <option value=$Fighter>
-              Fighter
-            </option>
-            <option value=$Monk>
-              Monk
-            </option>
-            <option value=$Rogue>
-              Rogue
-            </option>
-          </select>
+          <div>
+            <label for=$classId>
+              Class: 
+            </label>
+            <select
+              value=${ props.value }
+              onChange=${ props.handleChange }
+              id=$classId
+            >
+              <option value=$None>
+                --
+              </option>
+              <option value=$Barbarian>
+                Barbarian
+              </option>
+              <option value=$Fighter>
+                Fighter
+              </option>
+              <option value=$Monk>
+                Monk
+              </option>
+              <option value=$Rogue>
+                Rogue
+              </option>
+            </select>
+          </div>
         ');
     }
 

@@ -4,8 +4,7 @@ import react.ReactMacro.jsx;
 
 typedef LevelPickerProps = {
     value:String,
-    handleChange:(ReactEvent) -> Void,
-    id:String
+    handleChange:(ReactEvent) -> Void
 }
 
 class LevelPicker extends ReactComponentOfProps<LevelPickerProps> {
@@ -15,25 +14,31 @@ class LevelPicker extends ReactComponentOfProps<LevelPickerProps> {
     }
 
     public override function render():ReactElement {
+        final levelId = "level-picker";
         return jsx('
-          <select
-            value=${ props.value }
-            onChange=${ props.handleChange }
-            id=${ props.id }
-          >
-            <option value="1">
-              1
-            </option>
-            <option value="2">
-              2
-            </option>
-            <option value="3">
-              3
-            </option>
-            <option value="4">
-              4
-            </option>
-          </select>
+          <div>
+            <label for=$levelId>
+              Level: 
+            </label>
+            <select
+              value=${ props.value }
+              onChange=${ props.handleChange }
+              id=$levelId
+            >
+              <option value="1">
+                1
+              </option>
+              <option value="2">
+                2
+              </option>
+              <option value="3">
+                3
+              </option>
+              <option value="4">
+                4
+              </option>
+            </select>
+          </div>
         ');
     }
 
