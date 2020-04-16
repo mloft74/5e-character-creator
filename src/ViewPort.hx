@@ -22,7 +22,7 @@ class ViewPort extends ReactComponentOfState<ViewPortState> {
         };
     }
 
-    public function previousView():Void {
+    private function previousView():Void {
         final currentView = state.currentView;
         final shouldDisable = currentView - 1 == 0 ? true : false;
         setState({
@@ -31,21 +31,21 @@ class ViewPort extends ReactComponentOfState<ViewPortState> {
         });
     }
 
-    public function nextView():Void {
+    private function nextView():Void {
         setState({
             currentView: state.currentView + 1,
             previousDisabled: false
         });
     }
 
-    public function handleClassChange(event:ReactEvent) {
+    private function handleClassChange(event:ReactEvent) {
         final target:Dynamic = event.currentTarget;
         setState({
             classValue: target.value
         });
     }
 
-    public function handleLevelChange(event:ReactEvent) {
+    private function handleLevelChange(event:ReactEvent) {
         final target:Dynamic = event.currentTarget;
         setState({
             levelValue: target.value
